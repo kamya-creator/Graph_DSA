@@ -21,7 +21,7 @@ public class Intro {
         {
             parent[y_ult_parent] = x_ult_parent;
         }
-        else if(parent[y_ult_parent] > parent[x_ult_parent])
+        else if(rank[y_ult_parent] > rank[x_ult_parent])
         {
             parent[x_ult_parent] = y_ult_parent;
         }
