@@ -30,6 +30,7 @@ public class RottemOrranges {
 
                 Pair rem = queue.poll();
                 int curr_x = rem.x; int curr_y = rem.y; int curr_level = rem.level;
+                 ans = Math.max(curr_level ,ans );
 
                 for(int i =0;i<4;i++)
                 {
@@ -47,13 +48,6 @@ public class RottemOrranges {
             }
             if(freshCount != 0) return -1;
 
-            for(int i = 0 ;i < n;i++)
-            {
-                for(int j  = 0 ;j < m ; j ++)
-                {
-                    ans = Math.max(time[i][j] ,ans );
-                }
-            }
 
             return ans;
         }
@@ -99,3 +93,4 @@ public class RottemOrranges {
         System.out.println(i);
     }
 }
+
