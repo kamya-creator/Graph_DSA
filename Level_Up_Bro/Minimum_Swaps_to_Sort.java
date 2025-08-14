@@ -30,26 +30,27 @@ public class Minimum_Swaps_to_Sort {
             list.add(new Pair1(arr[i], i));
         }
         Collections.sort(list);
-        for(int i = 0 ;i < n ; i ++)
+        int ans = 0;
+        for(int i = 0 ; i < n ; i ++)
         {
-            Pair1 curr = list.get(i);
+            Pair curr = list.get(i);
             int index_ = curr.index;
+            if(index_ == i || visited[index_] == true) continue;
+            
             int count = 0;
-            boolean flag = false;
-            while(visited[index_] != true)
+            while(visited[index_] == false)
             {
+                
                 visited[index_] = true;
-                flag = true;
-                index_ = list.get(index_).index;
+                index_          = list.get(index_).index;
                 count++;
             }
-            if(flag == true)
-            {
-                ans = ans + count - 1;
-
-            }
+            
+            ans = ans + (count - 1);
+            
         }
         return ans;
+        
     }
     public static void main(String[] args) {
         int arr[] = {10, 19, 6, 3, 5};
@@ -57,3 +58,4 @@ public class Minimum_Swaps_to_Sort {
         System.out.println(swaps);
     }
 }
+
